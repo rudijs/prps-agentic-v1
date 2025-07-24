@@ -7,12 +7,11 @@ Transform rough ideas into comprehensive PRDs with rich visual documentation.
 
 Generate a complete PRP for feature implementation with deep and thorough research.
 
-## AI Assistant Coding Framework
+## AI Assistant
 
-[Product Requirement Prompt (PRP)](./knowledge/global.md)
+**Important** For Context and Knowledge read the .md files in the `knowledge/` directory.
 
-## Developer Workflow
-
+## Developer PRP Workflow
 
 1. Write an initial feature document, based from a template
     - `cp prps/templates/new-feature.tpl.md prds/101-hello-world.md`
