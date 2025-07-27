@@ -1,7 +1,8 @@
+name: "Planning PRP Template - PRD Generation with Diagrams"
+description: |
+
 ## Purpose
 Generate comprehensive Product Requirements Documents (PRDs) with visual diagrams, turning rough ideas into detailed specifications ready for implementation PRPs.
-
-Write the generated PRD into the prds/ folder, ex: prds/101-hello-world-prd.md
 
 ## Philosophy
 1. **Research First**: Gather context before planning
@@ -12,7 +13,7 @@ Write the generated PRD into the prds/ folder, ex: prds/101-hello-world-prd.md
 ---
 
 ## Initial Concept
-Create a Hello World script in Bash in the src/ directory
+$ARGUMENTS
 
 ## Planning Process
 
@@ -25,12 +26,12 @@ research_areas:
     - competitors: [Research similar solutions]
     - user_needs: [Identify pain points]
     - trends: [Current industry directions]
-
+  
   technical_research:
     - existing_solutions: [How others solve this]
     - libraries: [Available tools/frameworks]
     - patterns: [Common implementation approaches]
-
+  
   internal_context:
     - current_system: [How it works today]
     - constraints: [Technical/business limitations]
@@ -97,17 +98,17 @@ graph TB
         UI[User Interface]
         State[State Management]
     end
-
+    
     subgraph "Backend"
         API[API Layer]
         BL[Business Logic]
         DB[(Database)]
     end
-
+    
     subgraph "External"
         EXT[External Services]
     end
-
+    
     UI --> API
     API --> BL
     BL --> DB
@@ -139,7 +140,7 @@ sequenceDiagram
     participant A as API
     participant D as Database
     participant E as External Service
-
+    
     U->>F: Initiates Action
     F->>A: POST /api/endpoint
     A->>D: Query Data
@@ -177,7 +178,7 @@ graph LR
     B --> C[Integration]
     C --> D[Testing]
     D --> E[Deployment]
-
+    
     A -.- F[Database Schema<br/>API Framework<br/>Authentication]
     B -.- G[Business Logic<br/>API Endpoints<br/>Basic UI]
     C -.- H[External Services<br/>Full UI Integration<br/>Error Handling]
@@ -201,21 +202,21 @@ challenges:
   technical_risks:
     - risk: "Performance at scale"
       mitigation: "Implement caching layer"
-
+    
     - risk: "Third-party API reliability"
       mitigation: "Build fallback mechanisms"
-
+  
   business_risks:
     - risk: "User adoption"
       mitigation: "Phased rollout with feedback loops"
-
+    
     - risk: "Scope creep"
       mitigation: "Strict MVP definition"
-
+  
   edge_cases:
     - scenario: "No network connectivity"
       handling: "Offline mode with sync"
-
+    
     - scenario: "Concurrent updates"
       handling: "Optimistic locking"
 ```
@@ -271,8 +272,7 @@ grep -E "(TODO|TBD|FIXME)" generated_prd.md
 mermaid-cli -i generated_prd.md -o prd_diagrams.pdf
 
 # Validate structure
-npm run lint
-npx tsc --noEmit
+python validate_prd_structure.py generated_prd.md
 ```
 
 ## Anti-Patterns to Avoid
@@ -304,4 +304,4 @@ Output would include:
 - Edge cases like offline users, rate limiting
 - Success metrics like delivery rate, user engagement
 
-The resulting PRD becomes the 'Create a Hello World script in Bash in the src/ directory' input for implementation PRPs like BASE_PRP or SPEC_PRP.
+The resulting PRD becomes the `$ARGUMENTS` input for implementation PRPs like BASE_PRP or SPEC_PRP.

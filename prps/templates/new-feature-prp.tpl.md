@@ -30,7 +30,7 @@ The AI agent only gets the context you are appending to the PRP and its own trai
 
 ## PRP Generation
 
-Using PRPs/templates/prp_base.md as template:
+Using prps/templates/prp-base-typescript.md as a template:
 
 ### Critical Context at minimum to Include and pass to the AI agent as part of the PRP
 
@@ -51,10 +51,10 @@ Using PRPs/templates/prp_base.md as template:
 
 ```bash
 # Syntax/Style
-ruff check --fix && mypy .
+npm run lint
 
 # Unit Tests
-uv run pytest tests/ -v
+npm test
 
 ```
 

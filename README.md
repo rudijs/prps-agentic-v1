@@ -21,6 +21,7 @@ Generate a complete PRP for feature implementation with deep and thorough resear
     - `bash prps/scripts/prepare-prd.sh prds/101-hello-world.md`
     - Output: prds/101-hello-world-prd-prompt.md
 3. Load the prompt into context in the IDE Agent Panel and execute it
+    - Ex: `process @prds/101-hello-world-prd-prompt.md`
     - Output: prds/101-hello-world-prd.md
 4. Create the prompt to create the PRP for the new PRD, based from a template
     - Interpolate the PRD into a new PRP, based on a template

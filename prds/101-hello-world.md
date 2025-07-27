@@ -1,1 +1,1 @@
-Create a Hello World script in Bash in the src/ directory
+Create a Typescript utility that returns the current time
