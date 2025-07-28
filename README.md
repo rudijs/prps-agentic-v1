@@ -9,7 +9,7 @@ Generate a complete PRP for feature implementation with deep and thorough resear
 
 ## AI Assistant
 
-**Important** For Context and Knowledge read the .md files in the `knowledge/` directory.
+**Important** Read the .md files in the `knowledge/` directory.
 
 ## Developer PRP Workflow
 
