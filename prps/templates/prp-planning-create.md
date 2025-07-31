@@ -1,8 +1,15 @@
-# Create PLANNING PRP (Advanced)
+## Purpose
+Generate comprehensive Product Requirements Documents (PRDs) with visual diagrams, turning rough ideas into detailed specifications ready for implementation PRPs.
 
-Transform rough ideas into comprehensive PRDs with rich visual documentation.
+## Philosophy
+1. **Research First**: Gather context before planning
+2. **Visual Thinking**: Use diagrams to clarify concepts
+3. **Validation Built-in**: Include challenges and edge cases
+4. **Implementation Ready**: Output feeds directly into other PRPs
 
-## Idea:
+---
+
+## Initial Concept
 $ARGUMENTS
 
 ## Discovery Process
@@ -13,7 +20,7 @@ $ARGUMENTS
    - Map to business goals if provided
 
 2. **Market & Technical Research**
-   - Do deep web search for the following:
+   - Perform web search for the following:
      - Market analysis
      - Competitor analysis
      - Technical feasibility study
@@ -28,8 +35,10 @@ $ARGUMENTS
      - Constraints/requirements?
 
 ## PRD Generation
-
 Using prps/templates/prp-planning-base.md
+
+## PRD Output
+Write the PRD to file prds/${FILE_NAME}-prd${FILE_EXT}
 
 ### Visual Documentation Plan
 ```yaml
@@ -71,14 +80,11 @@ diagrams_needed:
 **So that** [benefit]
 
 **Acceptance Criteria:**
-- [ ] Specific behavior
-- [ ] Edge case handling
-- [ ] Performance requirement
-
-**Technical Notes:**
-- Implementation approach
-- API implications
-- Data requirements
+- [ ] Criterion 1
+- [ ] Criterion 2
+   - Edge Cases:
+     - [Edge case 1]
+     - [Edge case 2]
 ```
 
 ### Implementation Strategy
@@ -123,9 +129,6 @@ diagrams_needed:
 9. Success Metrics
 10. Appendices
 ```
-
-## Output
-Save as: prds/${FILE_NAME}-prd-prompt${FILE_EXT}
 
 ## Quality Checklist
 - [ ] Problem clearly articulated

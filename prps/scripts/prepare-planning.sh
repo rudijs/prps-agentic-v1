@@ -12,3 +12,5 @@ export FILE_EXT=$(basename "$1" | sed 's/^[^.]*//')
 export ARGUMENTS=$(cat prds/${FILE_NAME}${FILE_EXT})
 
 envsubst '$ARGUMENTS $FILE_NAME $FILE_EXT' < prps/templates/prp-planning-create.md > prds/${FILE_NAME}-planning-prompt${FILE_EXT}
+
+echo "Planning prompt generated successfully: prds/${FILE_NAME}-planning-prompt${FILE_EXT}"

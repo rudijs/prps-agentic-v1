@@ -1,20 +1,35 @@
-> Command for priming the AI Assistant with core knowledge about your project
 
-# Prime Context for AI Assistant
+# Project Knowledge
 
-Use the command `tree -L 6 --gitignore` to get an understanding of the project structure.
+## Prime Context for AI Assistant
 
-Read the README.md file to get an understanding of the project.
+### **Strict Execution Protocol**
+1. **Trigger**:
+   Command: `execute @prime-core.md`
+   Actions:
+   - Read ALL files in this exact order (skip missing):
+     1. `knowledge/*.md` (context first)
+     2. `src/*.ts` (implementation)
+     3. `test/*.test.ts` (validation)
+   - Output ONLY final report (zero chat)
 
-Start with read and understand all the files the knowledge/ directory.
+2. **Report Format**:
+   ```markdown
+   ### Key Findings
+   - `knowledge/`: [PRP framework rules]
+   - `src/`: [Core patterns]
+   ```
 
-Read and understand key files in the src/ directory
+3. **Failure Rules**:
+   - Missing files: Skip silently
+   - Errors: Log in report, no interruption
 
-> List any additional files that are important to understand the project.
+### **Workflow**
+1. Confirm structure (`tree`)
+2. Read files in order
+3. Output report
 
-Explain back to me:
-- Project structure
-- Project purpose and goals
-- Key files and their purposes
-- Any important dependencies
-- Any important configuration files
+### **No Exceptions**
+- No confirmations
+- No questions
+- No deviations

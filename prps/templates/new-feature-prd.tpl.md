@@ -40,9 +40,9 @@ research_areas:
 #### Initial Exploration
 ```
 RESEARCH similar solutions:
-  - WEB_SEARCH: "{concept} implementation examples"
-  - WEB_SEARCH: "{concept} best practices"
-  - WEB_SEARCH: "{concept} architecture patterns"
+  - FIRECRAWL_SEARCH: "{concept} implementation examples"
+  - FIRECRAWL_SEARCH: "{concept} best practices"
+  - FIRECRAWL_SEARCH: "{concept} architecture patterns"
 
 ANALYZE existing codebase:
   - FIND: Similar features already implemented
@@ -272,7 +272,7 @@ mermaid-cli -i generated_prd.md -o prd_diagrams.pdf
 
 # Validate structure
 npm run lint
-npx tsc --noEmit
+npm run test:compile
 ```
 
 ## Anti-Patterns to Avoid

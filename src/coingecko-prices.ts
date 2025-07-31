@@ -2,18 +2,28 @@
 // But for modern Node.js (v18+), fetch is built-in.
 // For date handling, this uses vanilla Date; no external libs required.
 
+interface PriceDataPoint {
+  timestamp: Date;
+  price: number;
+  sma_10?: number;
+}
+
 async function fetchAndProcess(
   fetcher: typeof fetch,
   coinId: string = "chutes",
   vsCurrency: string = "usd",
   days: number = 1,
-): Promise<any[] | null> {
-  const url = ;
+): Promise<PriceDataPoint[] | null> {
+  const url = `https://api.coingecko.com/api/v3/coins/${coinId}/market_chart?vs_currency=${vsCurrency}&days=${days}`;
 
   try {
     const response = await fetcher(url);
     if (!response.ok) {
-      console.error();
+      console.error(
+        "Error fetching data:",
+        response.status,
+        response.statusText,
+      );
       return null;
     }
 
@@ -34,7 +44,7 @@ async function fetchAndProcess(
     priceData.sort((a, b) => a.timestamp.getTime() - b.timestamp.getTime());
 
     // Resample to 30-min intervals: Group into buckets and take last price in each
-    const resampled: { timestamp: Date; price: number; sma_10?: number }[] = [];
+    const resampled: PriceDataPoint[] = [];
     let currentBucketStart = new Date(
       Math.floor(priceData[0].timestamp.getTime() / (30 * 60 * 1000)) *
         (30 * 60 * 1000),
@@ -67,7 +77,7 @@ async function fetchAndProcess(
 
     return resampled;
   } catch (error) {
-    console.error();
+    console.error("An error occurred during data processing:", error);
     return null;
   }
 }
@@ -94,4 +104,3 @@ async function fetchAndProcess(
     // fs.appendFileSync('chutes_30min_closes.json', JSON.stringify(result) + '\n');
   }
 })();
-
