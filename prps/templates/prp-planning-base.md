@@ -39,6 +39,9 @@ research_areas:
 ```
 
 #### Initial Exploration
+
+Use the firecrawl MCP tool available to you.
+
 ```
 RESEARCH similar solutions:
   - WEB_SEARCH: "{concept} implementation examples"

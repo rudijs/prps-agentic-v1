@@ -41,6 +41,7 @@ You are a highly skilled software engineer with extensive knowledge in many prog
 - **Typescript** as the primary language.
 - **Use** `npm run lint` for code linting.
 - **Use** `npx tsc --noEmit` for code compilation validation.
+- **Do not use** ts-node. We are using latest typescript that can process .ts files.
 
 ### 📚 Documentation & Explainability
 - Model generated and maintained documentation is in the `docs` folder.
